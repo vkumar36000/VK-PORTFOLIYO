@@ -1,0 +1,34 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Modern responsive portfolio website built with HTML, SCSS, and JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "dev": "concurrently \"npm run sass:watch\" \"npm run serve\"",
+    "build": "npm run sass:build && npm run optimize",
+    "sass:watch": "sass --watch assets/scss:assets/css --style expanded",
+    "sass:build": "sass assets/scss:assets/css --style compressed",
+    "serve": "live-server --port=3000 --open=/index.html",
+    "optimize": "echo 'Build complete - ready for production'",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "portfolio",
+    "responsive",
+    "scss",
+    "javascript",
+    "web-developer"
+  ],
+  "author": "VIJAY",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "live-server": "^1.2.2",
+    "concurrently": "^8.2.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
