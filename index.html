@@ -3,70 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <!-- SEO Meta Tags -->
-        <title>VIJAY - Full Stack MERN Developer Portfolio</title>
-        <meta name="description" content="VIJAY - Passionate Full Stack Developer specializing in MERN stack. View my projects, skills, and experience in React, Node.js, MongoDB, and more.">
-        <meta name="keywords" content="MERN Stack Developer, Full Stack Developer, React Developer, Node.js, MongoDB, JavaScript, Portfolio, Web Developer">
-        <meta name="author" content="VIJAY">
-        <meta name="robots" content="index, follow">
-        
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="VIJAY - Full Stack MERN Developer Portfolio">
-        <meta property="og:description" content="Passionate Full Stack Developer specializing in MERN stack with hands-on experience in building responsive, scalable web applications.">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://your-domain.com">
-        <meta property="og:image" content="assets/Media/Work_3.png">
-        
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="VIJAY - Full Stack MERN Developer Portfolio">
-        <meta name="twitter:description" content="Passionate Full Stack Developer specializing in MERN stack">
-        <meta name="twitter:image" content="assets/Media/Work_3.png">
-        
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="assets/Media/favicon.ico">
-        <link rel="apple-touch-icon" href="assets/Media/apple-touch-icon.png">
-        
-        <!-- Web App Manifest -->
-        <link rel="manifest" href="manifest.json">
-        
-        <!-- Preconnect for performance -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net">
-        
-        <!-- Stylesheets -->
+
         <link rel="stylesheet" href="assets/css/styles.css">
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        
-        <!-- Preload critical resources -->
-        <link rel="preload" href="assets/css/styles.css" as="style">
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
-        
-        <!-- EmailJS -->
-        <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        
-        <!-- Schema.org structured data -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "VIJAY",
-            "jobTitle": "Full Stack MERN Developer",
-            "description": "Passionate Full Stack Developer specializing in MERN stack",
-            "url": "https://your-domain.com",
-            "sameAs": [
-                "https://www.linkedin.com/in/vijay-kumar-239199306",
-                "https://github.com/vkumar36000",
-                "https://leetcode.com/u/Vkumar360/"
-            ]
-        }
-        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio website complete</title>
     </head>
     <body>
-        <!-- Header -->
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
@@ -89,28 +34,20 @@
             </nav>
         </header>
 
-        <!-- Main Content -->
         <main class="l-main">
-            <!-- Home Section -->
+ 
             <section class="home bd-grid" id="home">
                 <div class="home__data">
                     <h1 class="home__title">Hi,<br>I am <span class="home__title-color">VIJAY</span><br> Web Developer</h1>
+
                     <a href="#contact" class="button">Contact</a>
                 </div>
 
                 <div class="home__social">
-                    <a href="https://www.linkedin.com/in/vijay-kumar-239199306" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="LinkedIn Profile">
-                        <i class='bx bxl-linkedin'></i>
-                    </a>
-                    <a href="./assets/Media/vijay_resume11.pdf" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="Download Resume">
-                        <i class='bx bx-briefcase'></i>
-                    </a>
-                    <a href="https://github.com/vkumar36000" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="GitHub Profile">
-                        <i class='bx bxl-github'></i>
-                    </a>
-                    <a href="https://leetcode.com/u/Vkumar360/" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="LeetCode Profile">
-                        <i class='bx bx-code-alt'></i>
-                    </a>
+                    <a href="https://www.linkedin.com/in/vijay-kumar-239199306" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="./assets/Media/vijay_resume11.pdf" target="_blank" class="home__social-icon"><i class='bx bx-briefcase' ></i></a>
+                    <a href="https://github.com/vkumar36000" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    <a href="https://leetcode.com/u/Vkumar360/" target="_blank" class="home__social-icon"><i class='bx bx-code-alt'></i></a>
                 </div>
 
                 <div class="home__img">
@@ -120,19 +57,19 @@
                         </mask>
                         <g mask="url(#mask0)">
                             <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/Media/Work_3.png" alt="VIJAY Profile Picture"/>
+                            <image class="home__blob-img" x="50" y="60" href="assets/Media/Work_3.png"/>
                         </g>
                     </svg>
                 </div>
             </section>
 
-            <!-- About Section -->
-            <section class="about section" id="about">
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
                 <h2 class="section-title">About</h2>
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="assets/Media/Work_3.1.png" alt="VIJAY - Full Stack Developer" loading="lazy">
+                        <img src="assets/Media/Work_3.1.png" alt="">
                     </div>
                     
                     <div>
@@ -149,22 +86,24 @@
                 </div>
             </section>
 
-            <!-- Skills Section -->
+            <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
                 <h2 class="section-title">Skills</h2>
 
                 <div class="skills__container bd-grid">          
                     <div>
+
                         <p class="skills__text">
                             As a MERN Stack developer, I possess the following professional skills.
                         </p>
-                        
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-react skills__icon'></i>
                                 <span class="skills__name">REACT</span>
                             </div>
-                            <div class="skills__bar skills__react"></div>
+                            <div class="skills__bar skills__react">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">70%</span>
                             </div>
@@ -175,40 +114,45 @@
                                 <i class='bx bxl-html5 skills__icon'></i>
                                 <span class="skills__name">HTML5</span>
                             </div>
-                            <div class="skills__bar skills__html"></div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
                             <div>
                                 <span class="skills__percentage">95%</span>
                             </div>
                         </div>
-                        
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-css3 skills__icon'></i>
                                 <span class="skills__name">CSS3</span>
                             </div>
-                            <div class="skills__bar skills__css"></div>
+                            <div class="skills__bar skills__css">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">85%</span>
                             </div>
                         </div>
-                        
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon'></i>
+                                <i class='bx bxl-javascript skills__icon' ></i>
                                 <span class="skills__name">JAVASCRIPT</span>
                             </div>
-                            <div class="skills__bar skills__js"></div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">75%</span>
                             </div>
                         </div>
-                        
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-github skills__icon'></i>
                                 <span class="skills__name">Git/GitHub</span>
                             </div>
-                            <div class="skills__bar skills__git"></div>
+                            <div class="skills__bar skills__git">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">81%</span>
                             </div>
@@ -219,7 +163,9 @@
                                 <i class='bx bxl-bootstrap skills__icon'></i>
                                 <span class="skills__name">Bootstrap/Tailwind</span>
                             </div>
-                            <div class="skills__bar skills__style"></div>
+                            <div class="skills__bar skills__style">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">68%</span>
                             </div>
@@ -230,7 +176,9 @@
                                 <i class='bx bxl-redux skills__icon'></i>
                                 <span class="skills__name">Redux/Redux-Toolkit</span>
                             </div>
-                            <div class="skills__bar skills__redux"></div>
+                            <div class="skills__bar skills__redux">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">57%</span>
                             </div>
@@ -241,7 +189,9 @@
                                 <i class='bx bxl-material-ui'></i>
                                 <span class="skills__name">Material-UI & Shadcn-UI</span>
                             </div>
-                            <div class="skills__bar skills__material"></div>
+                            <div class="skills__bar skills__material">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">61%</span>
                             </div>
@@ -252,29 +202,38 @@
                                 <i class='bx bxl-nodejs'></i>
                                 <span class="skills__name">NODE-JS</span>
                             </div>
-                            <div class="skills__bar skills__node"></div>
+                            <div class="skills__bar skills__node">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">59%</span>
                             </div>
                         </div>
 
+                        
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-express'></i>
                                 <span class="skills__name">EXPRESS-JS</span>
                             </div>
-                            <div class="skills__bar skills__express"></div>
+                            <div class="skills__bar skills__express">
+                                
+                            </div>
                             <div>
                                 <span class="skills__percentage">51%</span>
                             </div>
                         </div>
 
+
+                        
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-rest-api'></i>
                                 <span class="skills__name">REST-API</span>
                             </div>
-                            <div class="skills__bar skills__rest"></div>
+                            <div class="skills__bar skills__rest">
+
+                            </div>
                             <div>
                                 <span class="skills__percentage">62%</span>
                             </div>
@@ -282,87 +241,100 @@
                     </div>
 
                     <div class="skills__data">
-                        <div class="skills__names">
-                            <i class='bx bxl-mysql'></i>
-                            <span class="skills__name">MySQL</span>
+                            <div class="skills__names">
+                                <i class='bx bxl-mysql'></i>
+                                <span class="skills__name">MySQL</span>
+                            </div>
+                            <div class="skills__bar skills__sql">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">63%</span>
+                            </div>
                         </div>
-                        <div class="skills__bar skills__sql"></div>
-                        <div>
-                            <span class="skills__percentage">63%</span>
+                    
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-mongodb'></i>
+                                <span class="skills__name">MongooDB/Mongoose</span>
+                            </div>
+                            <div class="skills__bar skills__mongo">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">56%</span>
+                            </div>
                         </div>
-                    </div>
-                
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <i class='bx bxl-mongodb'></i>
-                            <span class="skills__name">MongooDB/Mongoose</span>
-                        </div>
-                        <div class="skills__bar skills__mongo"></div>
-                        <div>
-                            <span class="skills__percentage">56%</span>
-                        </div>
-                    </div>
 
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <i class='bx bxl-npm'></i>
-                            <span class="skills__name">NPM & NPX</span>
+                        
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-npm'></i>
+                                <span class="skills__name">NPM & NPX</span>
+                            </div>
+                            <div class="skills__bar skills__npm">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">68%</span>
+                            </div>
                         </div>
-                        <div class="skills__bar skills__npm"></div>
-                        <div>
-                            <span class="skills__percentage">68%</span>
-                        </div>
-                    </div>
 
+                    
                     <div>              
-                        <img src="./assets/Media/Top-16-Frontend--Technologies.jpg" alt="Frontend Technologies" class="skills__img" loading="lazy">
+                        <img src="./assets/Media/Top-16-Frontend--Technologies.jpg" alt="" class="skills__img">
                     </div>
                 </div>
             </section>
 
-            <!-- Work Section -->
+            <!--===== WORK =====-->
             <section class="work section" id="work">
                 <h2 class="section-title">Work</h2>
 
                 <div class="work__container bd-grid">
-                    <a href="https://wikipokemone.netlify.app/" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="assets/Media/wikipokemone.png" alt="Pokemon Wiki Project" loading="lazy">
+                    <a href="https://wikipokemone.netlify.app/"  target="_blank" class="work__img">
+                        <img src="assets/Media/wikipokemone.png"  alt="">
                     </a>
-                    <a href="https://deploy-preview-2--vk-weather.netlify.app/" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="assets/Media/weather.png" alt="Weather App Project" loading="lazy">
+                    <a href="https://deploy-preview-2--vk-weather.netlify.app/" target="_blank" class="work__img">
+                        <img src="assets/Media/weather.png" alt="vk-weather">
                     </a>
-                    <a href="https://vk-habit-tracker.netlify.app/" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="assets/Media/habit-tracker.png" alt="Habit Tracker Project" loading="lazy">
+                    <a href="https://vk-habit-tracker.netlify.app/" target="_blank" class="work__img">
+                        <img src="assets/Media/habit-tracker.png" alt="">
                     </a>
-                    <a href="https://vk-tic-tac-toe.netlify.app/" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="assets/Media/tic tac toe.png" alt="Tic Tac Toe Game Project" loading="lazy">
+                    <a href="https://vk-tic-tac-toe.netlify.app/" target="_blank" class="work__img">
+                        <img src="assets/Media/tic tac toe.png" alt="">
                     </a>
+    
+
                 </div>
             </section>
 
-            <!-- Contact Section -->
+            <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
             
                 <div class="contact__container bd-grid">
                     <form id="contact-form" class="contact__form">
-                        <input type="text" id="name" placeholder="Name" class="contact__input" required aria-label="Your Name">
-                        <input type="email" id="email" placeholder="Email" class="contact__input" required aria-label="Your Email">
-                        <textarea id="message" cols="30" rows="10" placeholder="Message" class="contact__input" required aria-label="Your Message"></textarea>
+                        <input type="text" id="name" placeholder="Name" class="contact__input" required>
+                        <input type="email" id="email" placeholder="Email" class="contact__input" required>
+                        <textarea id="message" cols="30" rows="10" placeholder="Message" class="contact__input" required></textarea>
                         <button type="submit" class="contact__button button">Send</button>
                     </form>
                 </div>
             </section>
         </main>
 
-        <!-- Footer -->
+        <!--===== FOOTER =====-->
         <footer class="footer">
             <p class="footer__title">VIJAY</p>
-            <p class="footer__copy">&#169; 2024 All rights reserved</p>
+            <p class="footer__copy">&#169;  All rigths reserved</p>
         </footer>
 
-        <!-- Scripts -->
-        <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
+        <!--===== SCROLL  =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN  =====-->
         <script src="assets/js/main.js"></script>
     </body>
 </html>
