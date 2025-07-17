@@ -1,340 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Kumar - MERN Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-500">Vijay Kumar</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link py-2">Home</a>
+                <a href="#about" class="nav-link py-2">About</a>
+                <a href="#skills" class="nav-link py-2">Skills</a>
+                <a href="#work" class="nav-link py-2">Work</a>
+                <a href="#contact" class="nav-link py-2">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-btn">
+                <i class="fas fa-bars text-2xl text-blue-500"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full px-6 py-2" id="mobile-menu">
+            <a href="#home" class="block py-2 hover:text-blue-500">Home</a>
+            <a href="#about" class="block py-2 hover:text-blue-500">About</a>
+            <a href="#skills" class="block py-2 hover:text-blue-500">Skills</a>
+            <a href="#work" class="block py-2 hover:text-blue-500">Work</a>
+            <a href="#contact" class="block py-2 hover:text-blue-500">Contact</a>
+        </div>
+    </nav>
 
-        <link rel="stylesheet" href="assets/css/styles.css">
-
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
-        <title>Portfolio website complete</title>
-    </head>
-    <body>
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">VIJAY</a>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-600">Vijay</span></h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">MERN Stack Developer</h2>
+                <p class="text-lg mb-8 text-gray-600">Building responsive, scalable web applications with clean code and intuitive user experiences.</p>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">Contact Me</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+                    <img src="https://vkumar36000.github.io/VK-PORTFOLIYO/assets/Media/Work_3.1.png" alt="Vijay Kumar" class="w-full h-full object-cover">
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                <span class="relative inline-block">
+                    About Me
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
+                </span>
+            </h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <img src="https://vkumar36000.github.io/VK-PORTFOLIYO/assets/Media/Work_3.1.png" alt="Vijay Kumar" class="rounded-lg shadow-lg w-full max-w-md">
                 </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
-
-        <main class="l-main">
- 
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I am <span class="home__title-color">VIJAY</span><br> Web Developer</h1>
-
-                    <a href="#contact" class="button">Contact</a>
-                </div>
-
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/vijay-kumar-239199306" target="_blank" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="./assets/Media/vijay_resume11.pdf" target="_blank" class="home__social-icon"><i class='bx bx-briefcase' ></i></a>
-                    <a href="https://github.com/vkumar36000" target="_blank" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                    <a href="https://leetcode.com/u/Vkumar360/" target="_blank" class="home__social-icon"><i class='bx bx-code-alt'></i></a>
-                </div>
-
-                <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/Media/Work_3.png"/>
-                        </g>
-                    </svg>
-                </div>
-            </section>
-
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/Media/Work_3.1.png" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I am VIJAY</h2>
-                        <p class="about__text">           
-                            I'm a passionate Full Stack Developer specializing in the MERN stack, 
-                            with hands-on experience in building responsive, scalable, and user-centric web applications. 
-                            I recently completed a 6-month internship at Dmatics Technologies, where I worked on real-world 
-                            projects involving user interface design and backend integration. I take pride in writing clean, performant
-                            code and love turning complex ideas into intuitive digital experiences. I'm currently looking for opportunities to 
-                            contribute to impactful projects as a MERN Stack Developer.
-                        </p>           
-                    </div>                                   
-                </div>
-            </section>
-
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-
-                <div class="skills__container bd-grid">          
-                    <div>
-
-                        <p class="skills__text">
-                            As a MERN Stack developer, I possess the following professional skills.
-                        </p>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-react skills__icon'></i>
-                                <span class="skills__name">REACT</span>
-                            </div>
-                            <div class="skills__bar skills__react">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">70%</span>
-                            </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">I'm Vijay Kumar</h3>
+                    <p class="text-lg mb-6 text-gray-600 leading-relaxed">
+                        I'm a passionate Full Stack Developer specializing in the MERN stack, with hands-on experience in building responsive, scalable, and user-centric web applications. I recently completed a 6-month internship at Dmatics Technologies, where I worked on real-world projects involving user interface design and backend integration.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-600 leading-relaxed">
+                        I take pride in writing clean, performant code and love turning complex ideas into intuitive digital experiences. I'm currently looking for opportunities to contribute to impactful projects as a MERN Stack Developer.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-code mr-2"></i>
+                            <span>MERN Stack</span>
                         </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-html5 skills__icon'></i>
-                                <span class="skills__name">HTML5</span>
-                            </div>
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <div>
-                                <span class="skills__percentage">95%</span>
-                            </div>
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-laptop-code mr-2"></i>
+                            <span>Frontend Development</span>
                         </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-css3 skills__icon'></i>
-                                <span class="skills__name">CSS3</span>
-                            </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name">JAVASCRIPT</span>
-                            </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">75%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-github skills__icon'></i>
-                                <span class="skills__name">Git/GitHub</span>
-                            </div>
-                            <div class="skills__bar skills__git">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">81%</span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-bootstrap skills__icon'></i>
-                                <span class="skills__name">Bootstrap/Tailwind</span>
-                            </div>
-                            <div class="skills__bar skills__style">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">68%</span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-redux skills__icon'></i>
-                                <span class="skills__name">Redux/Redux-Toolkit</span>
-                            </div>
-                            <div class="skills__bar skills__redux">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">57%</span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-material-ui'></i>
-                                <span class="skills__name">Material-UI & Shadcn-UI</span>
-                            </div>
-                            <div class="skills__bar skills__material">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">61%</span>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-nodejs'></i>
-                                <span class="skills__name">NODE-JS</span>
-                            </div>
-                            <div class="skills__bar skills__node">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">59%</span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-express'></i>
-                                <span class="skills__name">EXPRESS-JS</span>
-                            </div>
-                            <div class="skills__bar skills__express">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">51%</span>
-                            </div>
-                        </div>
-
-
-                        
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-rest-api'></i>
-                                <span class="skills__name">REST-API</span>
-                            </div>
-                            <div class="skills__bar skills__rest">
-
-                            </div>
-                            <div>
-                                <span class="skills__percentage">62%</span>
-                            </div>
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-server mr-2"></i>
+                            <span>Backend Development</span>
                         </div>
                     </div>
-
-                    <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-mysql'></i>
-                                <span class="skills__name">MySQL</span>
-                            </div>
-                            <div class="skills__bar skills__sql">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">63%</span>
-                            </div>
-                        </div>
-                    
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-mongodb'></i>
-                                <span class="skills__name">MongooDB/Mongoose</span>
-                            </div>
-                            <div class="skills__bar skills__mongo">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">56%</span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-npm'></i>
-                                <span class="skills__name">NPM & NPX</span>
-                            </div>
-                            <div class="skills__bar skills__npm">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">68%</span>
-                            </div>
-                        </div>
-
-                    
-                    <div>              
-                        <img src="./assets/Media/Top-16-Frontend--Technologies.jpg" alt="" class="skills__img">
-                    </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
-
-                <div class="work__container bd-grid">
-                    <a href="https://wikipokemone.netlify.app/"  target="_blank" class="work__img">
-                        <img src="assets/Media/wikipokemone.png"  alt="">
-                    </a>
-                    <a href="https://deploy-preview-2--vk-weather.netlify.app/" target="_blank" class="work__img">
-                        <img src="assets/Media/weather.png" alt="vk-weather">
-                    </a>
-                    <a href="https://vk-habit-tracker.netlify.app/" target="_blank" class="work__img">
-                        <img src="assets/Media/habit-tracker.png" alt="">
-                    </a>
-                    <a href="https://vk-tic-tac-toe.netlify.app/" target="_blank" class="work__img">
-                        <img src="assets/Media/tic tac toe.png" alt="">
-                    </a>
-    
-
-                </div>
-            </section>
-
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                <span class="relative inline-block">
+                    My Skills
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
+                </span>
+            </h2>
             
-                <div class="contact__container bd-grid">
-                    <form id="contact-form" class="contact__form">
-                        <input type="text" id="name" placeholder="Name" class="contact__input" required>
-                        <input type="email" id="email" placeholder="Email" class="contact__input" required>
-                        <textarea id="message" cols="30" rows="10" placeholder="Message" class="contact__input" required></textarea>
-                        <button type="submit" class="contact__button button">Send</button>
-                    </form>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 text-center">Frontend Technologies</h3>
+                    <div class="space-y-6">
+                        <!-- React -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">React</span>
+                                <span class="font-medium">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <!-- HTML5 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">HTML5</span>
+                                <span class="font-medium">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <!-- CSS3 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">CSS3</span>
+                                <span class="font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <!-- JavaScript -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">JavaScript</span>
+                                <span class="font-medium">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <!-- Bootstrap/Tailwind -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Bootstrap/Tailwind</span>
+                                <span class="font-medium">68%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 68%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </main>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 text-center">Backend & Other Technologies</h3>
+                    <div class="space-y-6">
+                        <!-- Node.js -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Node.js</span>
+                                <span class="font-medium">59%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 59%"></div>
+                            </div>
+                        </div>
+                        <!-- Express.js -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Express.js</span>
+                                <span class="font-medium">51%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 51%"></div>
+                            </div>
+                        </div>
+                        <!-- MongoDB -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">MongoDB</span>
+                                <span class="font-medium">56%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 56%"></div>
+                            </div>
+                        </div>
+                        <!-- Git/GitHub -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Git/GitHub</span>
+                                <span class="font-medium">81%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 81%"></div>
+                            </div>
+                        </div>
+                        <!-- REST API -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">REST API</span>
+                                <span class="font-medium">62%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="skill-bar bg-blue-600 h-2.5 rounded-full" style="width: 62%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <img src="https://vkumar36000.github.io/VK-PORTFOLIYO/assets/Media/Top-16-Frontend--Technologies.jpg" alt="Frontend Technologies" class="rounded-lg shadow-lg w-full">
+            </div>
+        </div>
+    </section>
 
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">VIJAY</p>
-            <p class="footer__copy">&#169;  All rigths reserved</p>
-        </footer>
+    <!-- Work Section -->
+    <section id="work" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                <span class="relative inline-block">
+                    My Projects
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
+                </span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="https://wikipokemone.netlify.app/" target="_blank">
+                        <img src="https://vkumar36000.github.io/VK-PORTFOLIYO/assets/Media/wikipokemone.png" alt="WikiPokemone" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">WikiPokemone</h3>
+                            <p class="text-gray-600">A Pokemon encyclopedia built with React</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">API</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="https://deploy-preview-2--vk-weather.netlify.app/" target="_blank">
+                        <img src="https://vkumar36000.github.io/VK-PORTFOLIYO/assets/Media/weather.png" alt="Weather App" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Weather App</h3>
+                            <p class="text-gray-600">Real-time weather information application</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">API</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="https://vk-habit-tracker.netlify.app/" target="_blank">
+                        <img src="https://vkumar36000.github.io/VK-PORTFOLIYO/assets/Media/habit-tracker.png" alt="Habit Tracker" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Habit Tracker</h3>
+                            <p class="text-gray-600">Track your daily habits and progress</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Local Storage</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="https://vk-tic-tac-toe.netlify.app/" target="_blank">
+                        <img src="https://vkumar36000.github.io/VK-PORTFOLIYO/assets/Media/tic%20tac%20toe.png" alt="Tic Tac Toe" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Tic Tac Toe</h3>
+                            <p class="text-gray-600">Classic game built with JavaScript</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML5</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-16 relative">
+                <span class="relative inline-block">
+                    Get In Touch
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-500"></span>
+                </span>
+            </h2>
+            
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-600 text-white p-12">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p>vijay@example.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p>+91 9876543210</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Location</h4>
+                                    <p>Bangalore, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <h4 class="font-semibold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center hover:bg-blue-800 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-12">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Send Me a Message</h3>
+                        <form id="contact-form">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!--===== SCROLL  =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-blue-400">Vijay Kumar</a>
+                    <p class="mt-2 text-gray-400">MERN Stack Developer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Vijay Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-        <!--===== MAIN  =====-->
-        <script src="assets/js/main.js"></script>
-    </body>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            bar.style.width = width;
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(bar);
+            });
+        }
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            animateSkillBars();
+        });
+    </script>
+</body>
 </html>
